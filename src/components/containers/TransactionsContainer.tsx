@@ -32,8 +32,7 @@ const TransactionsContainer = async ({ address }: ITransactionsContainer) => {
           <TableRow>
             <TableHead>Txn Hash</TableHead>
             <TableHead className="text-right">Amount</TableHead>
-            <TableHead>Timestamp</TableHead>
-            <TableHead></TableHead>
+            <TableHead className="text-right">Timestamp</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -59,8 +58,7 @@ const TransactionsContainer = async ({ address }: ITransactionsContainer) => {
                   .replace(/\.?0+$/, "") || 0}{" "}
                 {unit}
               </TableCell>
-              <TableCell>{txn.timestamp}</TableCell>
-              <TableCell>see details</TableCell>
+              <TableCell className="text-right">{txn.timeStamp}</TableCell>
             </TableRow>
           ))}
         </TableBody>
