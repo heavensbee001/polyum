@@ -24,6 +24,7 @@ const TransactionsContainer = async ({ address }: ITransactionsContainer) => {
   const { data } = await fetchAddressTransactions(address);
 
   const unit = "ETH";
+
   return (
     <section>
       <Table>
