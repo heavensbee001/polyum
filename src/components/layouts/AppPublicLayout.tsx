@@ -14,7 +14,7 @@ const AppPublicLayout: React.FC<AppPublicLayoutProps> = ({ children }) => {
       <TopNavBar />
 
       {/* Main content */}
-      <main>{children}</main>
+      <main className="px-4 max-w-screen-lg mx-auto">{children}</main>
 
       {/* Footer (if needed) */}
       {/* <footer></footer> */}
