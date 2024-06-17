@@ -9,7 +9,7 @@ export async function GET(req: Request) {
     throw new Error("address field is required");
   }
 
-  const _url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=100&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`;
+  const _url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=0&offset=100&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`;
 
   try {
     const res = await fetch(_url, {
