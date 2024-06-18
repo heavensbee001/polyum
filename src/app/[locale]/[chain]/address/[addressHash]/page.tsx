@@ -1,6 +1,14 @@
 import AddressDetailContainer from "@/components/containers/AddressDetailContainer";
 import TransactionsContainer from "@/components/containers/TransactionsContainer";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Table,
+  TableHeader,
+  TableRow,
+  TableHead,
+  TableBody,
+  TableCell,
+} from "@/components/ui/table";
 import { Suspense } from "react";
 
 const AddressPage = ({
@@ -16,7 +24,7 @@ const AddressPage = ({
         <AddressDetailContainer address={addressHash} chain={chain} />
       </Suspense>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<TransactionsSkeleton />}>
         <TransactionsContainer
           key={addressHash + chain}
           address={addressHash}
@@ -37,6 +45,37 @@ const AddressSkeleton = () => {
         <Skeleton className="h-4 w-full mt-4 mb-6" />
         <Skeleton className="h-4 w-full mb-6" />
       </div>
+    </div>
+  );
+};
+
+const TransactionsSkeleton = () => {
+  return (
+    <div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Txn Hash</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
+            <TableHead className="text-right">Timestamp</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {[...Array(5)].map((item) => (
+            <TableRow key={item}>
+              <TableCell>
+                <Skeleton className="h-4 w-full" />
+              </TableCell>
+              <TableCell className="text-right">
+                <Skeleton className="h-4 w-1/2 ml-auto" />
+              </TableCell>
+              <TableCell className="text-right">
+                <Skeleton className="h-4 w-1/2 ml-auto" />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 };

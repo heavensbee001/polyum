@@ -46,12 +46,15 @@ const TransactionsContainer = async ({
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
-                      <Link href={`/ethereum/transaction/${txn.hash}`}>
+                      <Link
+                        href={`/ethereum/transaction/${txn.hash}`}
+                        className="text-cyan-600 hover:text-cyan-500 hover:underline"
+                      >
                         {txn.hash.slice(0, 6)}...{txn.hash.slice(-4)}
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>{txn.hash}</p>
+                      <p className="text-sm">{txn.hash}</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
