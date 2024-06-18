@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 import Link from "next/link";
+import { formatDate } from "@/lib/utils/formatDate";
 
 interface ITransactionsContainer {
   address: string;
@@ -65,7 +66,9 @@ const TransactionsContainer = async ({
                   .replace(/\.?0+$/, "") || 0}{" "}
                 {unit}
               </TableCell>
-              <TableCell className="text-right">{txn.timeStamp}</TableCell>
+              <TableCell className="text-right">
+                {formatDate(Number(txn.timeStamp))}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
