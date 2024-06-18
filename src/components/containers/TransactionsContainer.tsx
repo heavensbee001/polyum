@@ -18,10 +18,14 @@ import Link from "next/link";
 
 interface ITransactionsContainer {
   address: string;
+  chain: string;
 }
 
-const TransactionsContainer = async ({ address }: ITransactionsContainer) => {
-  const { data } = await fetchAddressTransactions(address);
+const TransactionsContainer = async ({
+  address,
+  chain,
+}: ITransactionsContainer) => {
+  const { data } = await fetchAddressTransactions(address, chain);
 
   const unit = "ETH";
 

@@ -9,13 +9,17 @@ import { Link } from "lucide-react";
 
 interface IAddressDetailContainer {
   address: string;
+  chain: string;
 }
 
-const AddressDetailContainer = async ({ address }: IAddressDetailContainer) => {
+const AddressDetailContainer = async ({
+  address,
+  chain,
+}: IAddressDetailContainer) => {
   // add a little timer to simulate the time it takes to fetch the data
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  const { data } = await fetchAddressDetails(address);
+  const { data } = await fetchAddressDetails(address, chain);
 
   const unit = "ETH";
 
