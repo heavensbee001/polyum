@@ -42,8 +42,6 @@ const TransactionsTable = ({ data, unit }: ITransactionsTable) => {
   };
 
   useEffect(() => {
-    console.log(sortMode);
-
     sortData(sortMode);
   }, [data, sortMode]);
 
