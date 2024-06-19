@@ -49,8 +49,6 @@ export async function GET(req: Request) {
     const blockData = await blockRes.json();
 
     data.result.blockData = blockData.result;
-
-    console.log("===>", data);
   } catch (err) {
     console.log(err);
     error = err;
