@@ -15,7 +15,7 @@ const TransactionDetailPage = ({
       <Suspense fallback={<AddressSkeleton />}>
         <TransactionDetailContainer txn={txnHash} chain={chain} />
       </Suspense>
-      <Suspense>
+      <Suspense fallback={<span>Loading transaction status</span>}>
         <TransactionStatusContainer txn={txnHash} chain={chain} />
       </Suspense>
     </div>

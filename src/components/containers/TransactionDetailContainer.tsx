@@ -57,7 +57,7 @@ const TransactionDetailContainer = async ({
           </Link>
         </section>
         <hr className="text-neutral-100 mb-8" />
-        <section className="grid grid-cols-12 gap-4 mb-8">
+        <section className="border border-neutral-100 p-4 rounded-lg shadow-md bg-white grid grid-cols-12 gap-4 mb-8">
           <div className="col-span-6 md:col-span-4">
             <p className="text-lg text-neutral-400">Amount:</p>
             <h3>
@@ -79,7 +79,7 @@ const TransactionDetailContainer = async ({
             </p>
           </div>
         </section>
-        <section className="grid grid-cols-12 gap-4 mb-8">
+        <section className="border border-neutral-100 p-4 rounded-lg shadow-md bg-white grid grid-cols-12 gap-4 mb-12">
           <div className="col-span-12 md:col-span-6">
             <p className="text-lg text-neutral-400">From:</p>
             <TooltipProvider>

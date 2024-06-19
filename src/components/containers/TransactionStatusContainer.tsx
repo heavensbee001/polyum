@@ -40,7 +40,7 @@ const TransactionStatusContainer = async ({
     );
   } catch (error) {
     console.error(error);
-    return <h3>No transaction status found</h3>;
+    return <p>No transaction status found</p>;
   }
 };
 
