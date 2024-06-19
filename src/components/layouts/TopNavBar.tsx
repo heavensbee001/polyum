@@ -1,9 +1,11 @@
 import Image from "next/image";
 import ChainSelector from "./ChainSelector";
 
-interface TopNavBarProps {}
+interface ITopNavBarProps {
+  hideSelector?: boolean;
+}
 
-const TopNavBar: React.FC<TopNavBarProps> = ({}) => {
+const TopNavBar: React.FC<ITopNavBarProps> = ({ hideSelector }) => {
   return (
     <>
       <nav className="h-16 mb-8 border-b border-neutral-100 fixed top-0 left-0 w-screen bg-white z-30">
@@ -19,9 +21,11 @@ const TopNavBar: React.FC<TopNavBarProps> = ({}) => {
             <span className="font-black text-3xl">Polyum</span>
           </div>
 
-          <div className="col-span-6 flex justify-end items-center">
-            <ChainSelector />
-          </div>
+          {!hideSelector && (
+            <div className="col-span-6 flex justify-end items-center">
+              <ChainSelector />
+            </div>
+          )}
         </div>
       </nav>
       <div className="h-16 w-screen mb-8"></div>
