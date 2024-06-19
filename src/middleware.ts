@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { i18nRoutingMiddleware } from "./middlewares/i18n.middleware";
-// import { subdomainMiddleware } from "./middlewares/subdomain.middleware";
+import { redirectsMiddleware } from "./middlewares/redirects.middleware";
 
 export default async function middleware(request: NextRequest) {
   // ------ INTL MIDDLEWARE ------
@@ -11,6 +11,8 @@ export default async function middleware(request: NextRequest) {
   response.headers.set("x-your-custom-locale", defaultLocale);
 
   // ------ OTHER MIDDLEWARE ------
+  // ------ REDIRECTS MIDDLEWARE ------
+  response = await redirectsMiddleware(request, response);
 
   return response;
 }
