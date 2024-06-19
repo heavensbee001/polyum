@@ -1,4 +1,5 @@
 import TransactionDetailContainer from "@/components/containers/TransactionDetailContainer";
+import TransactionStatusContainer from "@/components/containers/TransactionStatusContainer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Suspense } from "react";
 
@@ -10,9 +11,12 @@ const TransactionDetailPage = ({
   const { txnHash, chain } = params;
 
   return (
-    <div>
+    <div className="relative">
       <Suspense fallback={<AddressSkeleton />}>
         <TransactionDetailContainer txn={txnHash} chain={chain} />
+      </Suspense>
+      <Suspense>
+        <TransactionStatusContainer txn={txnHash} chain={chain} />
       </Suspense>
     </div>
   );
