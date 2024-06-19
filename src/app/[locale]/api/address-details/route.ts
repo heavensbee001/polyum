@@ -23,6 +23,7 @@ export async function GET(req: Request) {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: "no-cache",
     });
 
     data = await res.json();

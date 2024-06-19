@@ -22,6 +22,7 @@ export async function GET(req: Request) {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: "no-cache",
     });
 
     const resData = await res.json();

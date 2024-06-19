@@ -24,6 +24,7 @@ export async function GET(req: Request) {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: "no-cache",
     });
 
     data = await res.json();
@@ -44,6 +45,7 @@ export async function GET(req: Request) {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: "no-cache",
     });
 
     const blockData = await blockRes.json();
