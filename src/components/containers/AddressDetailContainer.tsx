@@ -21,7 +21,7 @@ const AddressDetailContainer = async ({
 
   const { data } = await fetchAddressDetails(address, chain);
 
-  const unit = "ETH";
+  const unit = chain === "polygon" ? "MATIC" : "ETH";
 
   return (
     <section className="mb-8">
@@ -37,8 +37,8 @@ const AddressDetailContainer = async ({
           </Tooltip>
         </TooltipProvider>
       </h1>
+      <p className="mr-2 text-lg text-neutral-400">Balance:</p>
       <h3>
-        <span className="mr-2 text-lg text-neutral-400">Balance:</span>
         {data.result / 10 ** 18} {unit}
       </h3>
     </section>
