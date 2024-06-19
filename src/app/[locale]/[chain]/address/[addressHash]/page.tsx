@@ -18,6 +18,10 @@ const AddressPage = ({
 }) => {
   const { addressHash, chain } = params;
 
+  if (chain !== "ethereum" && chain !== "polygon") {
+    return <h3>Invalid chain</h3>;
+  }
+
   return (
     <div>
       <Suspense fallback={<AddressSkeleton />}>

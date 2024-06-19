@@ -26,7 +26,7 @@ interface ITransactionsTable {
 
 const TransactionsTable = ({ data, unit }: ITransactionsTable) => {
   const [sortMode, setSortMode] = useState("timeStamp:desc");
-  const [sortedData, setSortedData] = useState(data.result);
+  const [sortedData, setSortedData] = useState<any[]>([]);
 
   const sortData = (key: string) => {
     const [field, order] = key.split(":");
@@ -98,12 +98,14 @@ const TransactionsTable = ({ data, unit }: ITransactionsTable) => {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <Link
-                      href={`/ethereum/transaction/${txn.hash}`}
-                      className="text-cyan-600 hover:text-cyan-500 hover:underline"
-                    >
-                      {txn.hash.slice(0, 6)}...{txn.hash.slice(-4)}
-                    </Link>
+                    {txn.hash && (
+                      <Link
+                        href={`/ethereum/transaction/${txn.hash}`}
+                        className="text-cyan-600 hover:text-cyan-500 hover:underline"
+                      >
+                        {txn.hash.slice(0, 6)}...{txn.hash.slice(-4)}
+                      </Link>
+                    )}
                   </TooltipTrigger>
                   <TooltipContent>
                     <p className="text-sm">{txn.hash}</p>

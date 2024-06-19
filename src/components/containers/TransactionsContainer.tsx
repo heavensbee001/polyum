@@ -12,6 +12,10 @@ const TransactionsContainer = async ({
 }: ITransactionsContainer) => {
   const { data } = await fetchAddressTransactions(address, chain);
 
+  if (data.message !== "OK" || data.error) {
+    return <h3>No transactions data found</h3>;
+  }
+
   const unit = chain === "polygon" ? "MATIC" : "ETH";
 
   return (
