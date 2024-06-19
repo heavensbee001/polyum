@@ -1,5 +1,10 @@
 {
   "Address": {
-    "title": "Hello world!"
+    "balance": "Balance",
+    "table": {
+      "hash": "Txn Hash",
+      "amount": "Amount",
+      "timestamp": "Timestamp"
+    }
   }
 }
