@@ -16,11 +16,9 @@ const TransactionsContainer = async ({
     return <h3>No transactions data found</h3>;
   }
 
-  const unit = chain === "polygon" ? "MATIC" : "ETH";
-
   return (
     <section>
-      <TransactionsTable data={data} unit={unit} />
+      <TransactionsTable data={data} chain={chain} />
     </section>
   );
 };

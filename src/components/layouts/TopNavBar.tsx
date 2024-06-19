@@ -7,8 +7,8 @@ const TopNavBar: React.FC<TopNavBarProps> = ({}) => {
   return (
     <>
       <nav className="h-16 mb-8 border-b border-neutral-100 fixed top-0 left-0 w-screen bg-white z-30">
-        <div className="h-full px-4 max-w-screen-lg mx-auto grid grid-cols-12 gap-2">
-          <div className="flex flex-nowrap items-center col-span-6 md:col-span-4">
+        <div className="h-full px-4 max-w-screen-md mx-auto grid grid-cols-12 gap-2">
+          <div className="flex flex-nowrap items-center col-span-6">
             <Image
               src="/icons/polyum-icon.svg"
               alt="Polyum Logo"
@@ -19,7 +19,7 @@ const TopNavBar: React.FC<TopNavBarProps> = ({}) => {
             <span className="font-black text-3xl">Polyum</span>
           </div>
 
-          <div className="col-span-6 md:col-span-4 flex justify-end md:justify-center items-center">
+          <div className="col-span-6 flex justify-end items-center">
             <ChainSelector />
           </div>
         </div>

@@ -5,7 +5,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { Link } from "lucide-react";
 
 interface IAddressDetailContainer {
   address: string;

@@ -21,10 +21,10 @@ import { ArrowDown, ArrowUp } from "lucide-react";
 
 interface ITransactionsTable {
   data: any;
-  unit: string;
+  chain: string;
 }
 
-const TransactionsTable = ({ data, unit }: ITransactionsTable) => {
+const TransactionsTable = ({ data, chain }: ITransactionsTable) => {
   const [sortMode, setSortMode] = useState("timeStamp:desc");
   const [sortedData, setSortedData] = useState<any[]>([]);
 
@@ -55,6 +55,8 @@ const TransactionsTable = ({ data, unit }: ITransactionsTable) => {
       setSortMode(`${key}:desc`);
     }
   };
+
+  const unit = chain === "polygon" ? "MATIC" : "ETH";
 
   return (
     <Table>
@@ -100,7 +102,7 @@ const TransactionsTable = ({ data, unit }: ITransactionsTable) => {
                   <TooltipTrigger>
                     {txn.hash && (
                       <Link
-                        href={`/ethereum/transaction/${txn.hash}`}
+                        href={`/${chain}/transaction/${txn.hash}`}
                         className="text-cyan-600 hover:text-cyan-500 hover:underline"
                       >
                         {txn.hash.slice(0, 6)}...{txn.hash.slice(-4)}
